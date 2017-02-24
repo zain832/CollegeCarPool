@@ -1,5 +1,6 @@
 var express = require('express');
 var passport = require('passport');
+var bodyParser = require("body-parser");
 var Strategy = require('passport-facebook').Strategy;
 
 
@@ -50,6 +51,12 @@ passport.deserializeUser(function(obj, cb) {
 // Create a new Express application.
 var app = express();
 
+// Serve static content for the app from the "public" directory in the application directory.
+app.use(express.static(process.cwd() + "/public"));
+
+//app.use(bodyParser.urlencoded({ extended: false }));
+
+
 // Set Handlebars.
 var exphbs = require("express-handlebars");
 
@@ -76,7 +83,7 @@ app.use(passport.session());
 // Define routes.
 app.get('/',
   function(req, res) {
-    res.render('home', { user: req.user });
+    res.render('home1', { user: req.user });
   });
 
 app.get('/login',
