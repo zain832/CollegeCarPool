@@ -7,9 +7,13 @@
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
+					{{#if user}}
+						<li><a href="#">Welcome, <strong>{{user.displayName}}</strong></a></li>
+					{{else}}
+						<li><a href="index.html">Login</a></li>
+					{{/if}}
 					<li><a href="index.html">Home</a></li>
 					<li><a href="index.html">Find a Ride</a></li>
-					<li><a href="index.html">Login</a></li>
 				</ul>
 			</nav>
 

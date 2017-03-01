@@ -37,7 +37,7 @@ module.exports = function(app) {
     require('connect-ensure-login').ensureLoggedIn(),
     function(req, res){
       // console.log(req.user.emails[0].value);
-      console.log(req.user);
+      //console.log("this user"+ JSON.stringify(req.user));
       res.render('getride', { user: req.user });
       //res.json(req.user);
     });
