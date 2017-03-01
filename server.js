@@ -2,7 +2,8 @@ var express = require('express');
 var passport = require('passport');
 var bodyParser = require("body-parser");
 var Strategy = require('passport-facebook').Strategy;
-
+//Grabs the keys from keys.js file
+var keys = require("./keys.js");
 
 // Configure the Facebook strategy for use by Passport.
 //
@@ -12,8 +13,10 @@ var Strategy = require('passport-facebook').Strategy;
 // with a user object, which will be set at `req.user` in route handlers after
 // authentication.
 passport.use(new Strategy({
-    clientID: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET,
+    // clientID: process.env.CLIENT_ID,
+    // clientSecret: process.env.CLIENT_SECRET,
+    clientID: keys.CLIENT_ID,
+    clientSecret: keys.CLIENT_SECRET,
     callbackURL: 'http://localhost:3000/login/facebook/return'
     ,profileFields: ['id', 'displayName', 'picture', 'email', 'education']
   },
@@ -51,6 +54,10 @@ passport.deserializeUser(function(obj, cb) {
 // Create a new Express application.
 var app = express();
 
+// Setting up port and requiring models for syncing
+var PORT = process.env.PORT || 3000;
+var db = require("./models");
+
 // Serve static content for the app from the "public" directory in the application directory.
 app.use(express.static(process.cwd() + "/public"));
 
@@ -62,10 +69,6 @@ var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
-
-// Configure view engine to render EJS templates.
-// app.set('views', __dirname + '/views');
-// app.set('view engine', 'ejs');
 
 // Use application-level middleware for common functionality, including
 // logging, parsing, and session handling.
@@ -79,32 +82,14 @@ app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveU
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Requiring our routes
+require("./routes/html-routes.js")(app);
+require("./routes/api-routes.js")(app);
 
-// Define routes.
-app.get('/',
-  function(req, res) {
-    res.render('home1', { user: req.user });
+
+// Syncing our database and logging a message to the user upon success
+db.sequelize.sync({force:true}).then(function() {
+  app.listen(PORT, function() {
+    console.log("==> 🌎  KarPool: Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
   });
-
-app.get('/login',
-  function(req, res){
-    res.render('login');
-  });
-
-app.get('/login/facebook',
-  passport.authenticate('facebook', { scope: ['public_profile'] }));
-
-app.get('/login/facebook/return',
-  passport.authenticate('facebook', { failureRedirect: '/login' }),
-  function(req, res) {
-    res.redirect('/profile');
-  });
-
-app.get('/profile',
-  require('connect-ensure-login').ensureLoggedIn(),
-  function(req, res){
-    console.log(req.user.emails[0].value);
-    res.render('profile', { user: req.user });
-  });
-
-app.listen(3000);
+});
