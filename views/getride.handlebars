@@ -20,75 +20,101 @@
 			the background image.
 		-->
 
-		<!-- One -->
-			<section id="one" class="wrapper post bg-img" data-bg="banner2.jpg">
-				<div class="inner">
-					<article class="box">
-						<header>
-							<h2>Set Your KarPool</h2>
-							<p>Just fill out the form and we'll do the rest</p>
-						</header>
+
+			<!-- One -->
+					<section id="one" class="wrapper post bg-img" data-bg="banner2.jpg">
+						<div class="inner">
+							<article class="box">
+								<header>
+									<h2>Set Your KarPool</h2>
+									<p>Just fill out the form and we'll do the rest</p>
+								</header>
 
 
-							<!-- booking form  -->
-								<div class="col-xxs-12 col-xs-6 mt alternate">
-									 <section>
-										 <label for="class">I Want To</label>
-										 <select class="cs-select cs-skin-border">
-											 <option value="Offer Ride">Offer a Ride</option>
-											 <option value="Find Ride">Find a Ride</option>
-										 </select>
-									 </section>
-								 </div>
+									<!-- booking form  -->
+									<div class="col-xxs-12 col-xs-6 mt alternate">
+											 <section>
+												 <label for="class">I Want To</label>
+												 <select class="cs-select cs-skin-border">
+													 <option value="Offer Ride">Offer a Ride</option>
+													 <option value="Find Ride">Find a Ride</option>
+												 </select>
+											 </section>
+										 </div>
 
-							 <div class="row">
-								 <div class="col-xs-12 col-xs-12 mt">
-									 <div class="input-field">
-										 <label for="from">Current City:</label>
-										 <input type="text" class="form-control" id="depart-Address" placeholder="University of Texas"/>
-									 </div>
-								 </div>
+									<div class="row">
+										<div class="col-xs-12 col-xs-12 mt">
+											<div class="input">
+												<label for="name">Name:</label>
+												<input type="text" class="form-control" id="name" placeholder="Azim"/>
+											</div>
+									</div>
 
-								 <div class="col-xs-12 col-xs-12 mt">
-									 <div class="input-field">
-										 <label for="from">Destination City:</label>
-										 <input type="text" class="form-control" id="to-place" placeholder="Katy"/>
-									 </div>
-								 </div>
+										<div class="col-xs-12 col-xs-12 mt">
+											<div class="input">
+												<label for="email">E-Mail Address:</label>
+												<input type="text" class="form-control" id="email" placeholder="email@ut.edu"/>
+											</div>
+										</div>
 
-						 		 <div class="col-xxs-12 col-xs-6 mt alternate">
-									 <section>
-										 <label for="class">Seats Available</label>
-										 <select class="cs-select cs-skin-border">
-											 <option value="" disabled selected>0</option>
-											 <option value="1">1</option>
-											 <option value="2">2</option>
-											 <option value="3">3</option>
-										 </select>
-									 </section>
-								 </div>
+										<div class="col-xs-12 col-xs-12 mt">
+											<div class="input">
+												<label for="car-make">Car Make/Model:</label>
+												<input type="text" class="form-control" id="car-make" placeholder="Honda Civic"/>
+											</div>
+										</div>
 
-								<div class="row">
-								 <div class="col-xxs-12 col-xs-6 mt alternate">
-									 <div class="input-field">
-										 <label for="date-start">Departure Date:</label>
-										 <input type="text" class="form-control" id="date-start" placeholder="mm/dd/yyyy hh:mm"/>
-									 </div>
-								 </div>
+									 <div class="row">
+										 <div class="col-xs-12 col-xs-12">
+											 <div class="input">
+												 <label for="from-place">Current City:</label>
+												 <input type="text" class="form-control" id="from-place" placeholder="University of Texas"/>
+											 </div>
+										 </div>
 
-								 <div class="col-xxs-12 col-xs-6 mt alternate">
-									 <div class="input-field">
-										 <label for="date-end">Arrival Date:</label>
-										 <input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy hh:mm"/>
-									 </div>
-								 </div>
+										 <div class="col-xs-12 col-xs-12">
+											 <div class="input">
+												 <label for="to-place">Destination City:</label>
+												 <input type="text" class="form-control" id="to-place" placeholder="Katy"/>
+											 </div>
+										 </div>
 
-								 <div class="col-xs-12 col-xs-12 mt">
-									 <div class="input-field">
-										 <label for="from">Set Cost for Riders:</label>
-										 <input type="text" class="form-control" id="from-place" placeholder="$10"/>
-									 </div>
-								</div>
-		<div id="search">
-			<a href="/api/postride"><button type="button" id="submit">Send Ride</button></a>
-		</div>
+								 		 <div class="col-xxs-12 col-xs-6 mt alternate">
+											 <section>
+												 <label for="seats">Seats Available: </label>
+												 <select class="cs-select cs-skin-border">
+													 <option value="" disabled selected>0</option>
+													 <option value="1">1</option>
+													 <option value="2">2</option>
+													 <option value="3">3</option>
+												 </select>
+											 </section>
+										 </div>
+
+										<div class="row">
+										 <div class="col-xxs-12 col-xs-6 mt alternate">
+											 <div class="input">
+												 <label for="date-start">Departure Date:</label>
+												 <input type="text" class="form-control" id="date-start" placeholder="mm/dd/yyyy hh:mm"/>
+											 </div>
+										 </div>
+
+										 <div class="col-xxs-12 col-xs-6 mt alternate">
+											 <div class="input">
+												 <label for="date-end">Arrival Date:</label>
+												 <input type="text" class="form-control" id="date-end" placeholder="mm/dd/yyyy hh:mm"/>
+											 </div>
+										 </div>
+
+										 <div class="col-xxs-12 col-xs-6 mt alternate">
+											 <div class="input">
+												 <label for="cost">Set Cost for Riders:</label>
+												 <input type="text" class="form-control" id="cost" placeholder="$10"/>
+											 </div>
+										</div>
+
+										<div id="search">
+											<a href="/api/postride"><button type="button" id="submit">Send Ride</button></a>
+
+										</div>
+									</section>
