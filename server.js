@@ -93,3 +93,9 @@ db.sequelize.sync({force:true}).then(function() {
     console.log("==> 🌎  KarPool: Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
   });
 });
+
+// db.sequelize.sync().then(function() {
+//   app.listen(PORT, function() {
+//     console.log("==> 🌎  KarPool: Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+//   });
+// });

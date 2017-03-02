@@ -9,6 +9,11 @@ module.exports = function(app) {
       res.render('home1', { user: req.user });
     });
 
+    app.get('/getridetest',
+      function(req, res) {
+        res.render('getride');
+      });
+
 
   app.get('/login',
     function(req, res){
