@@ -1,22 +1,8 @@
 {
-  "name": "express-4.x-facebook-example",
-  "version": "0.0.0",
-  "description": "Express 4.x app using Passport for authentication with Facebook.",
-  "keywords": [
-    "example",
-    "express",
-    "passport"
-  ],
-  "author": "Jared Hanson",
-  "license": "Unlicense",
-  "homepage": "https://github.com/passport/express-4.x-facebook-example",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/passport/express-4.x-facebook-example.git"
-  },
-  "bugs": {
-    "url": "https://github.com/passport/express-4.x-facebook-example/issues"
-  },
+  "name": "karpool",
+  "version": "1.0.0",
+  "description": "This example demonstrates how to use [Express](http://expressjs.com/) 4.x and [Passport](http://passportjs.org/) to authenticate users using Facebook.  Use this example as a starting point for your own web applications.",
+  "main": "server.js",
   "dependencies": {
     "body-parser": "^1.16.1",
     "connect-ensure-login": "^0.1.1",
@@ -30,5 +16,20 @@
     "passport": "^0.2.2",
     "passport-facebook": "^2.0.0",
     "sequelize": "^3.30.2"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azimmomin123/CollegeCarPool.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/azimmomin123/CollegeCarPool/issues"
+  },
+  "homepage": "https://github.com/azimmomin123/CollegeCarPool#readme"
 }
