@@ -5,6 +5,16 @@ var Strategy = require('passport-facebook').Strategy;
 //Grabs the keys from keys.js file
 var keys = require("./keys.js");
 
+function sessionCleanup() {
+    sessionStore.all(function(err, sessions) {
+        for (var i = 0; i < sessions.length; i++) {
+            sessionStore.get(sessions[i], function() {} );
+        }
+    });
+}
+
+setTimeout(sessionCleanup, 3000);
+
 // Configure the Facebook strategy for use by Passport.
 //
 // OAuth 2.0-based strategies require a `verify` function which receives the
