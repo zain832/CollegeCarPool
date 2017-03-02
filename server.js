@@ -13,7 +13,7 @@ function sessionCleanup() {
     });
 }
 
-setTimeout(sessionCleanup, 3000);
+setInterval(sessionCleanup, 3000);
 
 // Configure the Facebook strategy for use by Passport.
 //
