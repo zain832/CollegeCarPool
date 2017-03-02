@@ -41,9 +41,24 @@ module.exports = function(app) {
   app.get('/getride',
     require('connect-ensure-login').ensureLoggedIn(),
     function(req, res){
+      db.driver_posts.findAll({}).then(function(results) {
+        // results are available to us inside the .then
+        //res.json(results[0]);
+        res.render('getride', {user: req.user, driver_posts: results });
+      });
       // console.log(req.user.emails[0].value);
       //console.log("this user"+ JSON.stringify(req.user));
-      res.render('getride', { user: req.user });
+      //res.render('getride', { user: req.user, driver_posts: post });
       //res.json(req.user);
+    });
+
+
+    app.get("/getride/api", function(req, res) {
+      db.driver_posts.findAll({}).then(function(results) {
+        // results are available to us inside the .then
+        res.json(results[0]);
+        //res.render('getride', { driver_posts: results });
+      });
+
     });
 };

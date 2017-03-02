@@ -119,16 +119,11 @@
 									</div>
 								</section>
 
+								{{#each driver_posts}}
 								<!-- Shows all avalible rides -->
 										<section id="one" class="wrapper post bg-img" data-bg="banner4.jpg">
 											<div class="inner">
 												<article class="box">
-													<header>
-														<h2>KarPool Board</h2>
-														<p>View all the avalible rides and reserve one now!</p>
-													</header>
-
-													{{#each driver_posts}}
 														<div class="row">
 															<div class="col-xs-4 col-sm-2 col-md-1">
 																<img src="http://www.drodd.com/images12/facebook-profile-picture29.jpg" class="img responsive img-thumbnail full_image">
@@ -154,56 +149,56 @@
 
 															<div class="col-xs-12 col-sm-4 col-md-4 text-left">
 																<div class="well emptywell">
-																<p><strong>Departing Time: </strong> 10:10 AM</p>
+																<p><strong>Departing Time: </strong> {{this.depart_time}}</p>
 																</div>
 															</div>
 
 															<div class="col-xs-12 col-sm-4 col-md-4 text-left">
 																<div class="well emptywell">
-																<p><strong>Arrival Address: </strong> 4626 Russett Lane, Sugar Land, Tx 77479</p>
+																<p><strong>Arrival Address: </strong> {{this.arrival_address}}</p>
 																</div>
 															</div>
 
 															<div class="col-xs-12 col-sm-4 col-md-4 text-left">
 																<div class="well emptywell">
-																<p><strong>Return Departing Address: </strong> 4626 Russett Lane, Sugar Land, Tx 77479</p>
+																<p><strong>Return Departing Address: </strong> {{this.return_depart_address}}</p>
 																</div>
 															</div>
 
 															<div class="col-xs-12 col-sm-4 col-md-4 text-left">
 																<div class="well emptywell">
-																<p><strong>Return Departing Time: </strong> 10:10 AM</p>
+																<p><strong>Return Departing Time: </strong> {{this.return_depart_time}}</p>
 																</div>
 															</div>
 
 															<div class="col-xs-12 col-sm-4 col-md-4 text-left">
 																<div class="well emptywell">
-																<p><strong>Return Arrival Address: </strong> 4626 Russett Lane, Sugar Land, Tx 77479</p>
+																<p><strong>Return Arrival Address: </strong> {{this.return_arrival_address}}</p>
 																</div>
 															</div>
 
 															<div class="col-xs-12 col-sm-4 col-md-4 text-left">
 																<div class="well emptywell">
-																<p><strong>Seats Avalible: </strong> 3</p>
+																<p><strong>Seats Avalible: </strong> {{this.seats}}</p>
 																</div>
 															</div>
 
 															<div class="col-xs-12 col-sm-4 col-md-4 text-left">
 																<div class="well emptywell">
-																<p><strong>Car Make/Model: </strong> 3</p>
+																<p><strong>Car Make/Model: </strong>{{this.car}}</p>
 																</div>
 															</div>
 
 															<div class="col-xs-12 col-sm-4 col-md-4 text-left">
 																<div class="well emptywell">
-																<p><strong>Additional Comments: </strong> I will be waiting outside in a red hat</p>
+																<p><strong>Additional Comments: </strong> {{this.notes}}</p>
 																</div>
 															</div>
 													</div>
 
 													<div class="col-xs-12 col-sm-4 col-md-4 text-left">
 														<div class="well emptywell">
-														<p><strong>Cost: $</strong> 3</p>
+														<p><strong>Cost: $</strong> {{this.cost}}</p>
 														</div>
 													</div>
 
@@ -212,72 +207,13 @@
 															<a href="index.html" class="button alt center text-right">Book Now!</a>
 														</div>
 													</div>
-												{{/each}}
+
 
 										 </section>
+										 {{/each}}
 
 
-			<!-- Three -->
-				<section id="three" class="wrapper post bg-img" data-bg="banner4.jpg">
-					<div class="inner">
-						<article class="box">
-							<header>
-								<h2>KarPools at your University</h2>
-							</header>
-
-							<div class="well">
-								<div class="row">
-									<div class="row">
-										<div class="col-xs-12">
-											<div class="well emptywell">
-												<h4>UT Austin to Downtown Houston, Texas</h4>
-											</div>
-										</div>
-									</div>
-
-								<div class="row">
-									<div class="col-xs-4 col-sm-2 col-md-1">
-										<img src="http://www.drodd.com/images12/facebook-profile-picture29.jpg" class="img responsive img-thumbnail full_image">
-									</div>
-
-									<div class="col-xs-8 col-sm-10 col-md-5 text-center">
-										<div class="well emptywell">
-											<h5 style="font-size:19px">Driver</h5>
-										</div>
-									</div>
-
-									<div class="col-xs-4 col-sm-5 col-md-3 text-center">
-										<div class="well emptywell">
-											<strong>
-												<span class="glyphicons glyphicons-user">
-												</span>
-												<span class="hidden xs">Seat Required: 1</span>
-											</strong>
-										</div>
-									</div>
-
-									<div class="col-xs-4 col-sm-5 col-md-3">
-										<div class="well text-center emptywell">
-											<span class="glyphicons glyphicons-gender-male">
-											</span>
-											<span class="hidden-xs">Male</span>
-										</div>
-									</div>
-
-									<div class="row">
-									</div>
-
-									<div class="col-xs-12 col-sm-4 col-md-4 text-left">
-										<div class="well emptywell">
-											<p>Available Times: Wed Thu Fri Sat 4:30am - 7pm</p>
-										</div>
-									</div>
-							</div>
-
-							<footer>
-								<center><a href="index.html" class="button alt">Meetup</a>
-							</footer>
 						</article>
 					</div>
-					<a href="#four" class="more">Meet Up!</a>
+
 				</section>
