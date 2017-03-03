@@ -64,7 +64,7 @@ var MemoryStore = require('session-memory-store')(session);
 // for express 4.0-
 // var MemoryStore = require('session-memory-store')(express);
 
-app.use(express.cookieParser());
+app.use(express.cookieParser(config.cookieSecret));
 
 app.use(session({
   name: 'JSESSION',
