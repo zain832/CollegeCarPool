@@ -6,6 +6,7 @@ var Strategy = require('passport-facebook').Strategy;
 var keys = require("./keys.js");
 
 var session = require('express-session');
+var cookieParser = require('cookie-parser');
 
 
 // Configure the Facebook strategy for use by Passport.
