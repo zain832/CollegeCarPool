@@ -58,19 +58,19 @@ passport.deserializeUser(function(obj, cb) {
 // Create a new Express application.
 var app = express();
 
-// for express 4.0+
-var MemoryStore = require('session-memory-store')(session);
-
-// for express 4.0-
-// var MemoryStore = require('session-memory-store')(express);
-
-app.use(cookieParser());
-
-app.use(session({
-  name: 'JSESSION',
-  secret: 'my secret',
-  store: new MemoryStore()
-}));
+// // for express 4.0+
+// var MemoryStore = require('session-memory-store')(session);
+//
+// // for express 4.0-
+// // var MemoryStore = require('session-memory-store')(express);
+//
+// app.use(cookieParser());
+//
+// app.use(session({
+//   name: 'JSESSION',
+//   secret: 'my secret',
+//   store: new MemoryStore()
+// }));
 
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 3000;
