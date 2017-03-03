@@ -15,9 +15,6 @@
   },
   "production": {
     "use_env_variable":"JawsDB_URL",
-    "dialect": "mysql",
-    "dialectOptions": {
-      "socketPath": "/var/run/mysqld/mysqld.sock"
-    }
+    "dialect": "mysql"
   }
 }
