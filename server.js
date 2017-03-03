@@ -5,15 +5,9 @@ var Strategy = require('passport-facebook').Strategy;
 //Grabs the keys from keys.js file
 var keys = require("./keys.js");
 
-function sessionCleanup() {
-    sessionStore.all(function(err, sessions) {
-        for (var i = 0; i < sessions.length; i++) {
-            sessionStore.get(sessions[i], function() {} );
-        }
-    });
-}
+var session = require('express-session');
+var cookieParser = require('cookie-parser');
 
-setInterval(sessionCleanup, 7200000);
 
 // Configure the Facebook strategy for use by Passport.
 //
@@ -63,6 +57,20 @@ passport.deserializeUser(function(obj, cb) {
 
 // Create a new Express application.
 var app = express();
+
+// for express 4.0+
+var MemoryStore = require('session-memory-store')(session);
+
+// for express 4.0-
+// var MemoryStore = require('session-memory-store')(express);
+
+app.use(cookieParser());
+
+app.use(session({
+  name: 'JSESSION',
+  secret: 'my secret',
+  store: new MemoryStore()
+}));
 
 // Setting up port and requiring models for syncing
 var PORT = process.env.PORT || 3000;
